@@ -1,7 +1,7 @@
 ---
 title: Create a dataframe
 experience: beginner
-collection: vectors
+collection: dataframes
 ---
 
 I'm creating dataframes, yay!
