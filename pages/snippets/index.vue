@@ -9,7 +9,7 @@
       </li>
     </ul> -->
 
-    <pre><code>{{ posts }}</code></pre>
+    <!-- <pre><code>{{ posts }}</code></pre> -->
   </div>
 </template>
 

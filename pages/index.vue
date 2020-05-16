@@ -1,73 +1,77 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        a-few-lines-of-r
-      </h1>
-      <h2 class="subtitle">
-        Helpful snippets of R code
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
+  <div class="pt-16 pb-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-center">
+        <p
+          class="text-base leading-6 text-blue-600 font-semibold tracking-wide uppercase"
         >
-          GitHub
-        </a>
+          rstats-tricks.dev
+        </p>
+        <h2
+          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+        >
+          Helpful snippets of R code
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-700 lg:mx-auto">
+          A collection of examples to solve common problems in R
+        </p>
+
+        <div class="mt-12">
+          <a
+            href="https://github.com/kissmygritts"
+            class="py-4 px-8 bg-transparent hover:bg-blue-600 text-xl text-blue-600 font-semibold hover:text-white border border-blue-600 hover:border-transparent rounded"
+          >
+            Contribute on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="snippet__container mt-24">
+        <SnippetList :snippets="posts" class="snippet__content" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import path from 'path'
+import SnippetList from '~/components/SnippetList.vue'
 
 export default {
-  components: {
-    Logo
+  components: { SnippetList },
+
+  async asyncData() {
+    const context = await require.context('~/snippets', true, /\.md$/)
+    const posts = await context.keys().map((key) => ({
+      attributes: context(key).attributes,
+      filepath: `/snippets/${key.replace('.md', '').replace('./', '')}`,
+      route: `/snippets/${path.basename(key, '.md')}`,
+      slug: `${path.basename(key, '.md')}`
+    }))
+
+    return { posts }
   }
 }
 </script>
 
-<style>
+<style scoped>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.snippet__container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(0, 40em)
+    [main-end] minmax(1em, 1fr)
+    [full-end];
+  /* border: 2px solid purple; */
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.snippet__content {
+  grid-column: main;
+  /* border: 2px solid springgreen; */
 }
 </style>
