@@ -1,7 +1,7 @@
 {
   "name": "a-few-lines-of-r",
   "version": "1.0.0",
-  "description": "Helpful snippets of R code",
+  "description": "A collection of helpful snippets of R code",
   "author": "kissmygritts",
   "private": true,
   "scripts": {
@@ -17,14 +17,13 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "frontmatter-markdown-loader": "^3.4.3",
-    "fs": "0.0.1-security",
     "markdown-it-prism": "^2.0.5",
     "postcss-nested": "^4.2.1",
     "prettier": "^1.19.1"
