@@ -10,11 +10,6 @@
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown mt-12 text-gray-900" v-html="html"></div>
     </div>
-    <!-- <h1>Create a frontmatter markdown powered blog with nuxt</h1>
-    <pre><code>{{ params }}</code></pre>
-    <pre><code>{{ html }}</code></pre>
-    <pre><code>{{ meta }}</code></pre>
-    <pre><code>{{ attributes }}</code></pre> -->
   </div>
 </template>
 
@@ -63,11 +58,9 @@ export default {
     [main-start] minmax(0, 45em)
     [main-end] minmax(1em, 1fr)
     [full-end];
-  /* border: 2px solid purple; */
 }
 
 .snippet__content {
   grid-column: main;
-  /* border: 2px solid springgreen; */
 }
 </style>

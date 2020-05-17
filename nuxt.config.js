@@ -1,13 +1,22 @@
 import path from 'path'
 import glob from 'glob'
 import Mode from 'frontmatter-markdown-loader/mode'
+import MarkdownIt from 'markdown-it'
+import mip from 'markdown-it-prism'
+
+const md = new MarkdownIt({
+  html: true,
+  typographer: true
+})
+md.use(mip)
 
 const markdownPaths = ['snippets']
 function getMarkdownRoutes() {
   return [].concat(
-    ...markdownPaths.map(mdPath => {
-      return glob.sync(`${mdPath}/**/*.md`, { cwd: 'snippets' })
-        .map(filepath => `/${path.basename(filepath, '.md')}`)
+    ...markdownPaths.map((mdPath) => {
+      return glob
+        .sync(`${mdPath}/**/*.md`, { cwd: 'snippets' })
+        .map((filepath) => `/${path.basename(filepath, '.md')}`)
     })
   )
 }
@@ -37,7 +46,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/prism-dracula.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -73,7 +82,10 @@ export default {
         loader: 'frontmatter-markdown-loader',
         include: path.resolve(__dirname, 'snippets'),
         options: {
-          mode: [Mode.META, Mode.HTML]
+          mode: [Mode.META, Mode.HTML],
+          markdown(body) {
+            return md.render(body)
+          }
         }
       })
     }

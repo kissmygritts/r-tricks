@@ -8,6 +8,7 @@ https://nuxtjs.org/faq/postcss-plugins
   a {
     @apply text-blue-700 underline;
   }
+
   p {
     @apply my-4;
   }
@@ -152,5 +153,9 @@ https://nuxtjs.org/faq/postcss-plugins
 
   pre {
     @apply my-4;
+  }
+
+  p > code {
+    @apply text-purple-700 tracking-wide px-1;
   }
 }
