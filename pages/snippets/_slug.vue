@@ -8,7 +8,7 @@
       </h1>
 
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="markdown mt-12 text-gray-900" v-html="html"></div>
+      <div class="markdown mt-12 text-gray-700" v-html="html"></div>
     </div>
   </div>
 </template>

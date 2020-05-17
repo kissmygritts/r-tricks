@@ -2,7 +2,7 @@
   <div>
     <div v-for="(collection, i) in collections" :key="i">
       <h2
-        class="text-3xl text-blue-600 uppercase tracking-wide font-light border-blue-600 border-dashed border-b-2"
+        class="text-2xl md:text-3xl text-blue-600 uppercase tracking-wide font-light border-blue-600 border-dashed border-b-2"
       >
         {{ collection.collection }}
       </h2>

@@ -22,28 +22,37 @@ https://nuxtjs.org/faq/postcss-plugins
     @apply border;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-gray-800 font-bold mt-12;
+  }
+
   h1 {
-    @apply text-4xl font-bold mt-12;
+    @apply text-4xl;
   }
 
   h2 {
-    @apply text-3xl font-bold mt-12;
+    @apply text-3xl;
   }
 
   h3 {
-    @apply text-2xl font-bold mt-12;
+    @apply text-2xl;
   }
 
   h4 {
-    @apply text-lg font-bold mt-12;
+    @apply text-lg;
   }
 
   h5 {
-    @apply text-base font-bold mt-12;
+    @apply text-base;
   }
 
   h6 {
-    @apply text-sm font-bold mt-12;
+    @apply text-sm;
   }
 
   article,
@@ -136,6 +145,11 @@ https://nuxtjs.org/faq/postcss-plugins
     dl {
       margin: 0;
     }
+    li {
+      code {
+        @apply text-purple-700;
+      }
+    }
   }
 
   legend {
@@ -155,7 +169,8 @@ https://nuxtjs.org/faq/postcss-plugins
     @apply my-4;
   }
 
-  p > code {
+  p > code,
+  li > code {
     @apply text-purple-700 tracking-wide px-1;
   }
 }

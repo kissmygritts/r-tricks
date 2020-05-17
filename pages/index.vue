@@ -1,34 +1,36 @@
 <template>
-  <div class="pt-32 bg-white">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lg:text-center">
-        <p
-          class="text-base leading-6 text-blue-600 font-semibold tracking-wide uppercase"
-        >
-          r-code.dev
-        </p>
-        <h2
-          class="mt-8 text-3xl leading-8 font-extrabold tracking-tight text-gray-800 sm:text-4xl sm:leading-10"
-        >
-          Helpful snippets of R code
-        </h2>
-        <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-700 lg:mx-auto">
-          A collection of examples to solve common problems in R
-        </p>
-
-        <div class="mt-16">
-          <a
-            href="https://github.com/kissmygritts"
-            class="py-4 px-8 bg-transparent hover:bg-blue-600 text-xl text-blue-600 font-semibold hover:text-white border border-blue-600 hover:border-transparent rounded"
+  <div class="bg-white">
+    <div class="bg-cogs py-12 lg:pt-24 lg:pb-20">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <p
+            class="text-base leading-6 text-blue-600 font-semibold tracking-wide uppercase"
           >
-            Contribute on GitHub
-          </a>
+            A few lines of R
+          </p>
+          <h2
+            class="mt-5 text-3xl leading-8 font-extrabold tracking-tight text-gray-800 sm:text-4xl sm:leading-10"
+          >
+            Helpful snippets of R code
+          </h2>
+          <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-600 lg:mx-auto">
+            A collection of examples to solve common problems in R
+          </p>
+
+          <div class="mt-12 lg:mt-16">
+            <a
+              href="https://github.com/kissmygritts"
+              class="py-4 px-8 bg-blue-600 hover:bg-blue-500 text-xl text-white font-semibold hover:text-white border border-blue-600 hover:border-transparent rounded"
+            >
+              Contribute on GitHub
+            </a>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="snippet__container mt-40">
-        <SnippetList :snippets="posts" class="snippet__content" />
-      </div>
+    <div class="snippet__container mt-8 lg:mt-16">
+      <SnippetList :snippets="posts" class="snippet__content" />
     </div>
   </div>
 </template>
