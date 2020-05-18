@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="flex justify-between p-8 absolute">
+    <header class="flex justify-between p-2 lg:p-8 absolute">
       <div class="static inset-0">
         <nuxt-link class="text-sm text-gray-600 hover:underline" to="/">
           &larr; r-code.dev
@@ -11,7 +11,7 @@
     <div class="snippet__container pt-12">
       <div class="snippet__content">
         <h1
-          class="text-5xl leading-8 font-bold tracking-tight text-gray-800 sm:leading-10"
+          class="text-4xl lg:text-5xl leading-8 font-bold tracking-tight text-gray-800 sm:leading-10"
         >
           {{ attributes.title }}
         </h1>
