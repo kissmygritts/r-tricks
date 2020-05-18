@@ -10,15 +10,10 @@ const md = new MarkdownIt({
 })
 md.use(mip)
 
-const markdownPaths = ['snippets']
-function getMarkdownRoutes() {
-  return [].concat(
-    ...markdownPaths.map((mdPath) => {
-      return glob
-        .sync(`${mdPath}/**/*.md`, { cwd: 'snippets' })
-        .map((filepath) => `/${path.basename(filepath, '.md')}`)
-    })
-  )
+function getMarkdownRoutes(markdownDir) {
+  return glob
+    .sync(`${markdownDir}/**/*.md`)
+    .map((mdPath) => `/snippets/${path.basename(mdPath, '.md')}`)
 }
 
 export default {
@@ -93,6 +88,7 @@ export default {
   },
 
   generate: {
-    routes: getMarkdownRoutes()
+    routes: getMarkdownRoutes('snippets'),
+    fallback: true
   }
 }
