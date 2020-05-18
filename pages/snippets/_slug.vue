@@ -1,14 +1,28 @@
 <template>
-  <div class="snippet__container pt-12">
-    <div class="snippet__content">
-      <h1
-        class="text-4xl leading-8 font-extrabold tracking-tight text-gray-800 sm:leading-10"
-      >
-        {{ attributes.title }}
-      </h1>
+  <div>
+    <header class="flex justify-between p-8 absolute">
+      <div class="static inset-0">
+        <nuxt-link class="text-sm text-gray-600 hover:underline" to="/">
+          &larr; r-code.dev
+        </nuxt-link>
+      </div>
+    </header>
 
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="markdown mt-12 text-gray-700" v-html="html"></div>
+    <div class="snippet__container pt-12">
+      <div class="snippet__content">
+        <h1
+          class="text-5xl leading-8 font-bold tracking-tight text-gray-800 sm:leading-10"
+        >
+          {{ attributes.title }}
+        </h1>
+
+        <a class="block mt-6 text-blue-600 underline" :href="githubUrl">
+          edit on GitHub
+        </a>
+
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div class="markdown mt-10 text-gray-700" v-html="html"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,16 +42,11 @@ export default {
     try {
       const filteredPost = posts.filter((post) => post.slug === params.slug)
       const post = await import(`~/snippets/${filteredPost[0].filepath}.md`)
-      // const post = await import(`~/snippets/${params.slug}.md`)
-      // eslint-disable-next-line
-      console.log(post)
       return {
         ...post,
         params
       }
     } catch (err) {
-      // eslint-disable-next-line
-      console.log(err)
       return false
     }
   },
@@ -45,6 +54,16 @@ export default {
   data() {
     return {
       posts
+    }
+  },
+
+  computed: {
+    githubUrl() {
+      const url = this.meta.resourcePath
+        .split('/')
+        .slice(7, 10)
+        .join('/')
+      return `https://github.com/kissmygritts/r-tricks/blob/master/${url}`
     }
   }
 }
@@ -55,7 +74,7 @@ export default {
   display: grid;
   grid-template-columns:
     [full-start] minmax(1em, 1fr)
-    [main-start] minmax(0, 45em)
+    [main-start] minmax(0, 40em)
     [main-end] minmax(1em, 1fr)
     [full-end];
 }
