@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div class="bg-cogs py-12 lg:pt-24 lg:pb-20">
+    <div class="bg-cogs py-12 lg:pt-24 lg:pb-24">
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="lg:text-center">
           <p
@@ -19,7 +19,7 @@
 
           <div class="mt-12 lg:mt-16">
             <a
-              href="https://github.com/kissmygritts"
+              href="https://github.com/kissmygritts/r-tricks#contribute"
               class="py-4 px-8 bg-blue-600 hover:bg-blue-500 text-xl text-white font-semibold hover:text-white border border-blue-600 hover:border-transparent rounded"
             >
               Contribute on GitHub
