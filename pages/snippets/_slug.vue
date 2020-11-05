@@ -16,9 +16,14 @@
           {{ attributes.title }}
         </h1>
 
-        <!-- <a class="block mt-6 text-blue-600 underline" :href="githubUrl">
+        <a
+          class="block mt-6 text-blue-600 underline"
+          :href="githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           edit on GitHub
-        </a> -->
+        </a>
 
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="markdown mt-10 text-gray-700" v-html="html"></div>
@@ -59,10 +64,7 @@ export default {
 
   computed: {
     githubUrl() {
-      const url = this.meta.resourcePath
-        .split('/')
-        .slice(7, 10)
-        .join('/')
+      const url = this.meta.resourcePath.match(/snippets\/.*/g)
       return `https://github.com/kissmygritts/r-tricks/blob/master/${url}`
     }
   },
