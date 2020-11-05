@@ -1,7 +1,7 @@
 ---
 title: Identify overlapping polygons
 experience: advanced
-collection: spatial vectors
+collection: spatial
 description: Rounding numbers doesn't always work as expected in R. Here is a simple solution.
 ---
 

@@ -16,9 +16,9 @@
           {{ attributes.title }}
         </h1>
 
-        <a class="block mt-6 text-blue-600 underline" :href="githubUrl">
+        <!-- <a class="block mt-6 text-blue-600 underline" :href="githubUrl">
           edit on GitHub
-        </a>
+        </a> -->
 
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="markdown mt-10 text-gray-700" v-html="html"></div>
@@ -65,6 +65,13 @@ export default {
         .join('/')
       return `https://github.com/kissmygritts/r-tricks/blob/master/${url}`
     }
+  },
+
+  mounted() {
+    /* eslint-disable-next-line */
+    console.log(this.meta.resourcePath)
+    /* eslint-disable-next-line */
+    console.log(this.githubUrl)
   }
 }
 </script>
