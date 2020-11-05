@@ -22,7 +22,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          edit on GitHub
+          Edit on GitHub
         </a>
 
         <!-- eslint-disable-next-line vue/no-v-html -->
@@ -67,13 +67,6 @@ export default {
       const url = this.meta.resourcePath.match(/snippets\/.*/g)
       return `https://github.com/kissmygritts/r-tricks/blob/master/${url}`
     }
-  },
-
-  mounted() {
-    /* eslint-disable-next-line */
-    console.log(this.meta.resourcePath)
-    /* eslint-disable-next-line */
-    console.log(this.githubUrl)
   }
 }
 </script>
