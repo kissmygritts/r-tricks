@@ -51,10 +51,8 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/eslint-module', // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/tailwindcss' // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
   ],
   /*
    ** Nuxt.js modules
@@ -69,7 +67,10 @@ export default {
      */
     postcss: {
       plugins: {
-        'postcss-nested': {}
+        'postcss-import': {},
+        tailwindcss: {},
+        'postcss-nested': {},
+        autoprefixer: {}
       }
     },
     extend(config, ctx) {
