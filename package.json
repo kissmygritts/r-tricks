@@ -1,5 +1,5 @@
 {
-  "name": "a-few-lines-of-r",
+  "name": "r-code-dev",
   "version": "1.0.0",
   "description": "A collection of helpful snippets of R code",
   "author": "kissmygritts",
@@ -15,17 +15,17 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^2.0.0",
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^3.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
+    "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.2",
     "frontmatter-markdown-loader": "^3.4.3",
     "markdown-it-prism": "^2.0.5",
-    "postcss-nested": "^4.2.1",
-    "prettier": "^1.19.1"
+    "postcss-nested": "^4.2.3",
+    "prettier": "^2.2.0"
   }
 }
