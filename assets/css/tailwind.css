@@ -1,7 +1,3 @@
-@import "tailwindcss/base";
-@import './markdown.css';
-@import './prism-dracula.css';
-@import './main.css';
-
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
